@@ -86,6 +86,7 @@
             // 
             // cboLanguage
             // 
+            this.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLanguage.Name = "cboLanguage";
             this.cboLanguage.Size = new System.Drawing.Size(121, 25);
             // 
@@ -99,6 +100,7 @@
             this.btnPreView.Name = "btnPreView";
             this.btnPreView.Size = new System.Drawing.Size(23, 22);
             this.btnPreView.Text = "Show/Hide PreView";
+            this.btnPreView.Click += new System.EventHandler(this.btnPreView_Click);
             // 
             // btnCC
             // 
@@ -110,6 +112,7 @@
             this.btnCC.Name = "btnCC";
             this.btnCC.Size = new System.Drawing.Size(23, 22);
             this.btnCC.Text = "Start/Stop CC";
+            this.btnCC.Click += new System.EventHandler(this.btnCC_Click);
             // 
             // btnSelect
             // 
@@ -121,6 +124,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(23, 22);
             this.btnSelect.Text = "Select Rect";
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // splitContainer1
             // 
