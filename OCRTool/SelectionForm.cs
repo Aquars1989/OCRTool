@@ -12,8 +12,8 @@ namespace OCRTool
 {
     public partial class SelectionForm : Form
     {
-        public event EventHandler Selected;
-        public event EventHandler Cancel;
+        public event EventHandler? Selected;
+        public event EventHandler? Cancel;
 
         /// <summary>
         /// origin point when draging

@@ -38,14 +38,14 @@
             this.btnCC = new System.Windows.Forms.ToolStripButton();
             this.btnSelect = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPreview = new System.Windows.Forms.PictureBox();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -76,6 +76,8 @@
             // 
             this.txtThresh.Name = "txtThresh";
             this.txtThresh.Size = new System.Drawing.Size(100, 25);
+            this.txtThresh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtThresh_KeyDown);
+            this.txtThresh.Validating += new System.ComponentModel.CancelEventHandler(this.txtThresh_Validating);
             // 
             // toolStripLabel2
             // 
@@ -135,7 +137,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.picPreview);
             // 
             // splitContainer1.Panel2
             // 
@@ -144,14 +146,15 @@
             this.splitContainer1.SplitterDistance = 89;
             this.splitContainer1.TabIndex = 1;
             // 
-            // pictureBox1
+            // picPreview
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(533, 89);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPreview.Location = new System.Drawing.Point(0, 0);
+            this.picPreview.Name = "picPreview";
+            this.picPreview.Size = new System.Drawing.Size(533, 89);
+            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPreview.TabIndex = 0;
+            this.picPreview.TabStop = false;
             // 
             // txtResult
             // 
@@ -171,8 +174,11 @@
             this.ClientSize = new System.Drawing.Size(533, 296);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "OCR Tool";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -180,7 +186,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +203,7 @@
         private ToolStripButton btnPreView;
         private ToolStripButton btnCC;
         private ToolStripButton btnSelect;
-        private PictureBox pictureBox1;
+        private PictureBox picPreview;
         private TextBox txtResult;
     }
 }
